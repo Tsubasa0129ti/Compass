@@ -1,4 +1,4 @@
-
+const path = require("path");
 const {VueLoaderPlugin} = require("vue-loader");
 
 module.exports = {
@@ -9,7 +9,7 @@ module.exports = {
     
     // 出力先の設定
     output: {
-        path: `${__dirname}/dist/pages`,
+        path: path.resolve(__dirname, './src/main/resources/static/js'),
         filename: "[name].js",
         clean: true, //ToDo: 効いているかを確認する
     },
