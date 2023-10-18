@@ -38,3 +38,6 @@ out/
 
 ### node_modules ###
 /node_modules/
+
+### static
+/src/main/resources/static/
