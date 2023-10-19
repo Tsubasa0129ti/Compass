@@ -1,14 +1,19 @@
-<script setup>
-import { ref } from 'vue'
-const count = ref(0)
-</script>
-
 <template>
-  <button @click="count++">Count is: {{ count }}</button>
+  <div>
+    <h1>{{message}}</h1>
+    <p><input v-model="message"></p>
+  </div>
 </template>
 
-<style scoped>
-button {
-  font-weight: bold;
+<script>
+export default {
+  data() {
+    return {
+      message: ''
+    };
+  },
+  created() {
+    this.message = 'hello';
+  }
 }
-</style>
+</script>
