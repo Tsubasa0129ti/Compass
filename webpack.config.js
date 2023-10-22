@@ -1,5 +1,6 @@
 const path = require("path");
 const {VueLoaderPlugin} = require("vue-loader");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
     // エントリーポイントの設定
@@ -28,8 +29,28 @@ module.exports = {
                 loader: 'babel-loader',
             },
             {
-                test: /\.css$/, // ToDo: scssに変更する。（上記と同様の理由）
-                loader: 'css-loader',
+                test: /\.scss$/i,
+                use: [
+                    // Creates `style` nodes from JS strings
+                    process.env.NODE_ENV !== "production"
+                        ? "vue-style-loader"
+                        : MiniCssExtractPlugin,
+                    // Translates CSS into CommonJS
+                    "css-loader",
+                    // Compiles Sass to CSS
+                    {
+                        loader: "sass-loader",
+                        options: {
+                            // Prefer `dart-sass`
+                            implementation: require("sass"),
+                            sassOptions: {
+                                //disable fibers option
+                                fiber: false,
+                                sourceMap: true,
+                            }
+                        }
+                    }
+                ]
             }
         ],
     },
@@ -37,6 +58,10 @@ module.exports = {
     // プラグインの設定
     plugins: [
         new VueLoaderPlugin(),
+        new MiniCssExtractPlugin({
+            //determines the name of each output CSS file
+            filename: "[name].css",
+        }),
     ],
     
 }

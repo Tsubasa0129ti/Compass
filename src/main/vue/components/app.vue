@@ -1,6 +1,7 @@
 <template>
-  <div>
-    <h1>{{message}}</h1>
+  <div class="main">
+    <h1 class="message">{{message}}</h1>
+    <h2 class="sample">Sample</h2>
     <p><input v-model="message"></p>
   </div>
 </template>
@@ -17,3 +18,11 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+  .main {
+    .message {
+      color: red
+    }
+  }
+</style>
