@@ -1,8 +1,13 @@
-const path = require("path");
-const {VueLoaderPlugin} = require("vue-loader");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+import path from "path";
+import { VueLoaderPlugin } from "vue-loader";
+import MiniCssExtractPlugin from "mini-css-extract-plugin";
+import { fileURLToPath } from 'url';
+import sass from "sass";
 
-module.exports = {
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+export default {
     // エントリーポイントの設定
     entry: {
       app: `./src/main/vue/pages/app.ts`, // 以下にファイルの追加を行う。
@@ -50,7 +55,7 @@ module.exports = {
                         loader: "sass-loader",
                         options: {
                             // Prefer `dart-sass`
-                            implementation: require("sass"),
+                            implementation: sass,
                             sassOptions: {
                                 //disable fibers option
                                 fiber: false,
