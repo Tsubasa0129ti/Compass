@@ -6,12 +6,14 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 export default {
-  data() {
+  data(): {
+    message: string;
+  }{
     return {
-      message: ''
-    };
+      message: ""
+    }
   },
   created() {
     this.message = 'hello';
