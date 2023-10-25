@@ -5,8 +5,10 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 module.exports = {
     // エントリーポイントの設定
     entry: {
-      app: `./src/main/vue/pages/app.js`, // 以下にファイルの追加を行う。
+      app: `./src/main/vue/pages/app.ts`, // 以下にファイルの追加を行う。
     },
+    //ソースマップの設定（あまり理解していない）
+    devtool: 'inline-source-map',
     
     // 出力先の設定
     output: {
@@ -25,8 +27,14 @@ module.exports = {
                 loader: 'vue-loader',
             },
             {
-                test: /\.js$/, // ToDo: tsに変更する。（現在jsなのは、loader等が異なることを懸念している）
-                loader: 'babel-loader',
+                test: /\.tsx?$/,
+                use: [{
+                    loader: 'ts-loader',
+                    options: {
+                        appendTsSuffixTo: [/\.vue$/]
+                    }
+                }],
+                exclude: /node_modules/,
             },
             {
                 test: /\.scss$/i,
@@ -53,6 +61,10 @@ module.exports = {
                 ]
             }
         ],
+    },
+
+    resolve: {
+        extensions: ['.ts', '.js',]
     },
 
     // プラグインの設定

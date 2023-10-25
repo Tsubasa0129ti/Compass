@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "lib": ["es2023", "DOM"],
+    "module": "Node16",
+    "target": "ES2022",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "moduleResolution": "node16",
+    "sourceMap": true,
+    "typeRoots": ["src/main/vue/@types"]
+  },
+  // ユニットテストを含めるのであれば、"test/vue/**/*"も対象とする。（確認事項：vueファイル内にtsで記載した内容もトランスパイルされる？）
+  "include": ["src/main/vue/**/*"],
+  "exclude": ["dist", "node_modules"],
+}
