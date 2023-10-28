@@ -1,6 +1,9 @@
 {
   "compilerOptions": {
-    "lib": ["es2023", "DOM"],
+    "lib": [
+      "ES2022",
+      "DOM",
+    ],
     "module": "Node16",
     "target": "ES2022",
     "strict": true,
@@ -12,6 +15,6 @@
     "typeRoots": ["src/main/vue/@types"]
   },
   // ユニットテストを含めるのであれば、"test/vue/**/*"も対象とする。（確認事項：vueファイル内にtsで記載した内容もトランスパイルされる？）
-  "include": ["src/main/vue/**/*"],
+  "include": ["src/main/vue/**/*", "src/shims-vue.d.ts"],
   "exclude": ["dist", "node_modules"],
 }

@@ -1,13 +1,18 @@
 import { createApp } from 'vue';
+// import { ref } from 'vue';
 import '../../scss/index.scss'
 
-// import App from '../components/app.vue';
+import App from '../components/app.vue';
 
-// createApp(App).mount('#app');
-
-const elem: HTMLElement = document.getElementById("btn")!;
-
-elem.addEventListener("click", () => {
-    const str: string = "message";
-    console.log(str);
+/* const header = createApp({
+    setup() {
+        const header = ref("Hello");
+        return {
+            header
+        }
+    }
 });
+
+header.mount('#header'); */
+
+createApp(App).mount('#app');

@@ -69,7 +69,11 @@ export default {
     },
 
     resolve: {
-        extensions: ['.ts', '.js',]
+        alias: {
+            // 以下を有効化するとパフォーマンスが低下する。完全ビルドが必要になるケースが現れなければコメントアウトしたままとする。
+            //vue$: 'vue/dist/vue.esm-bundler.js'
+        },
+        extensions: ['.ts', '.js', '.vue']
     },
 
     // プラグインの設定
