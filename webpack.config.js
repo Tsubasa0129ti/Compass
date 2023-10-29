@@ -11,8 +11,8 @@ export default {
   // エントリーポイントの設定
   entry: {
     app: `./src/main/vue/pages/app.ts`,
-    login: `./src/main/vue/pages/auth/login.ts`,
-    signup: `./src/main/vue/pages/auth/signup.ts`,
+    'auth/login': `./src/main/vue/pages/auth/login.ts`,
+    'auth/signup': `./src/main/vue/pages/auth/signup.ts`,
   },
   //ソースマップの設定（あまり理解していない）
   devtool: 'inline-source-map',
