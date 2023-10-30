@@ -2,7 +2,7 @@
 name: Feature request
 about: 追加検討の新機能について
 title: ''
-labels: ''
+labels: feature
 assignees: ''
 
 ---
