@@ -2,7 +2,7 @@ import path from "path";
 import { VueLoaderPlugin } from "vue-loader";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import { fileURLToPath } from 'url';
-import sass from "sass";
+import * as sass from 'sass'
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -31,10 +31,10 @@ export default {
     rules: [
       {
         test:/\.vue$/,
-        loader: 'vue-loader',
+        loader: "vue-loader",
       },
       {
-        test: /\.tsx?$/,
+        test: /\.ts$/,
         use: [{
           loader: 'ts-loader',
           options: {
@@ -86,4 +86,10 @@ export default {
       filename: "[name].css",
     }),
   ],
+
+  // ホットリロードの設定をしようとしているが、詳細は不明のためコメントアウト
+  // devServer: {
+  //   port: '3000',
+  //   hot: true,
+  // }
 }
