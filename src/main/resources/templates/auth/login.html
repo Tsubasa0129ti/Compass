@@ -1,13 +1,207 @@
 <!DOCTYPE html>
 <html lang="ja" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login</title>
 </head>
 <body> 
-    <h1>ログインページ</h1>
-    <script src="/js/auth/login.js" type="module"></script>
+  <!-- GuestPageHeaderを共通コンポーネントとして作成する。 -->
+  <div class="guest-page-wrapper">
+    <header class="guest-page-header"></header>
+
+    <main class="guest-page-main">
+      <div class="guest-page-item">
+        <section class="guest-page-inner-item">
+          <header class="inner-header">
+            <h1>Welcome back!</h1>
+          </header>
+  
+          <form class="guest-page-form">
+            <div class="input-group">
+              <label for="username" class="input-label required">Username</label>
+              <input type="text" class="input-text" name="username" placeholder="ユーザー名を入力してください。" />
+            </div>
+            <div class="input-group">
+              <label for="password" class="input-label required">Password</label>
+              <input type="password" class="input-text" name="password" placeholder="パスワードを入力してください。" />
+            </div>
+      
+            <div class="transition-item">
+              <a class="s-link" href="/resetpassword">Forgot password?</a>
+            </div>
+      
+            <div class="submit-wrapper">
+              <input type="submit" class="submit" value="Login">
+            </div>
+  
+            <div class="tl">
+              <p class="page-trans">Don't you have an account?<a class="s-link ml-1" href="/signup">sign up</a></p>
+            </div>
+
+          </form>
+
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <script src="/js/auth/login.js" type="module"></script>
 </body>
 </html>
+
+<style>
+/**
+ * 画面全体の構成について記載する。
+ * 最も外側の要素は、flexで調整し、mainタグのみgridレイアウトで作成してみる。
+ */
+  .guest-page-wrapper {
+    display: flex;
+    flex-direction: column;
+
+    /* 仮置き 目的としては、ヘッダーのサイズと位置の指定だけしておきたい。 */
+  }
+
+  .guest-page-header {
+    padding-top: 48px;
+    height: 70px;
+  }
+
+  .guest-page-main {
+    display: grid;
+    grid-template-rows: [left-start center-start right-start] 1fr [left-end center-end right-end];
+    grid-template-columns: [left-start center-start] 1fr [left-end right-start] 1fr [center-end right-end];
+    padding: 80px;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    column-gap: 120px;
+  }
+
+  .guest-page-item {
+    grid-area: center;
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+  }
+
+  .inner-header {
+    padding: 15px 30px; /* 全体のサイズを確認し、変更する。 */
+    text-align: center;
+    line-height: 1.5; /* 適用されているかを確認する。 */
+  }
+
+  /* form */
+  .guest-page-form {
+    /* 位置の調整を行う。中身が出来上がってから考えるので、一旦放置 */
+    padding: 0 30px;
+  }
+
+  .input-group {
+    padding: 12px 0;
+
+  }
+
+  .input-label {
+    display: block;
+  }
+
+  .required::after {
+    content: "必須";
+    background-color: #FF3131;
+    color: #F2F2F2;
+    font-size: 12px;
+    font-weight: bolder;
+    border: 1px solid;
+    padding: 2px 3px;
+    margin: 0 5px;
+    white-space: nowrap;
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+    min-width: 10px;
+  }
+
+  .input-text {
+    width: 100%;
+    height: 48px;
+    box-sizing: border-box;
+    background-color: #EAEDF2;
+    border: 1px solid #E6E6E6;
+    border-radius: 5px;
+    padding-left: 10px;
+  }
+
+  /* リンク */
+  .transition-item {
+
+  }
+
+  /* サブミットボタン */
+  .submit-wrapper {
+    padding: 20px 0;
+    text-align: center;
+  }
+
+  .submit {
+    width: 100%;
+    box-sizing: border-box;
+    height: 48px; /* 仮置き */
+    font-size: 18px;
+  }
+
+  .page-trans {
+    text-align: center;
+  }
+
+  body {
+    margin: 0px;
+
+    /* 特に指定のない場合の文字色・サイズ・ */
+    font-size: 16px;
+    font-weight: 400;
+    font-family:'メイリオ', 'Meiryo','MS ゴシック','Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3',sans-serif;
+    color: #333333;
+  }
+
+
+  /*
+    以下では、共通のスタイルの定義を行う。
+
+    - 色
+    - 文字フォント・サイズ
+    - リンク
+    - ボタン
+  */
+
+  :root {
+    --color-body: 
+  }
+
+  /* text-lightのスタイル（本文より一回り小さめの文字） */
+  .tl {
+    font-size: 12px;
+    font-weight: 300;
+  }
+
+  /* サイズの小さなリンクのスタイル */
+  .s-link {
+    color: #A0BDE6;
+    font-size: 12px;
+    font-weight: 300;
+    /* font-faimilyの適用をするかも */
+    text-decoration: none;
+  }
+
+  .s-link:hover {
+    text-decoration: underline solid;
+    color: #BED8FC;
+  }
+
+  .ml-1 {
+    margin-left: 8px;
+  }
+  
+  
+</style>
