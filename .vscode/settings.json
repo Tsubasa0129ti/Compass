@@ -1,9 +1,14 @@
 {
   "java.configuration.updateBuildConfiguration": "automatic",
   "editor.formatOnSave": true,
+  "editor.fontLigatures": false,
+  "emmet.variables": {
+    "lang": "ja",
+  },
   "files.autoSave": "onFocusChange",
   "files.insertFinalNewline": true, // ファイルの最終行に改行を挿入
-  "files.trimTrailingWhitespace": true, // ファイル保存時に末尾の空白を削除する。（これなしでも適用されるのはなぜ？）
+  "files.trimFinalNewlines": true, // ファイルの最終行以降の空行を削除する
+  "files.trimTrailingWhitespace": true, // ファイル保存時に末尾の空白を削除する。
   "java.format.settings.profile": "GoogleStyle",
   "java.format.settings.url": "eclipse-java-google-style.xml",
   "[html]": {
@@ -34,8 +39,9 @@
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode" // JSONに対してPrettierを適用
   },
-  "[xml]": {},
+  "[xml]": {
+    "editor.defaultFormatter": "mikeburgh.xml-format"
+  },
   "prettier.bracketSpacing": false,
   "prettier.embeddedLanguageFormatting": "off",
-  "editor.fontLigatures": false
 }
