@@ -1,0 +1,41 @@
+{
+  "java.configuration.updateBuildConfiguration": "automatic",
+  "editor.formatOnSave": true,
+  "files.autoSave": "onFocusChange",
+  "files.insertFinalNewline": true, // ファイルの最終行に改行を挿入
+  "files.trimTrailingWhitespace": true, // ファイル保存時に末尾の空白を削除する。（これなしでも適用されるのはなぜ？）
+  "java.format.settings.profile": "GoogleStyle",
+  "java.format.settings.url": "eclipse-java-google-style.xml",
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    // "editor.suggest.insertMode": "replace",
+    // "editor.trimAutoWhitespace": false
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.suggest.insertMode": "replace"
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.suggest.insertMode": "replace"
+  },
+  "[javascript]": {
+    "editor.formatOnSave": false // 基本的にJSファイルは開発者が直接編集することを想定しないため。
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[vue]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[java]": {
+    "editor.suggest.snippetsPreventQuickSuggestions": false
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode" // JSONに対してPrettierを適用
+  },
+  "[xml]": {},
+  "prettier.bracketSpacing": false,
+  "prettier.embeddedLanguageFormatting": "off",
+  "editor.fontLigatures": false
+}
