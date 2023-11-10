@@ -2,9 +2,6 @@
   "java.configuration.updateBuildConfiguration": "automatic",
   "editor.formatOnSave": true,
   "editor.fontLigatures": false,
-  "emmet.variables": {
-    "lang": "ja",
-  },
   "files.autoSave": "onFocusChange",
   "files.insertFinalNewline": true, // ファイルの最終行に改行を挿入
   "files.trimFinalNewlines": true, // ファイルの最終行以降の空行を削除する
@@ -13,8 +10,6 @@
   "java.format.settings.url": "eclipse-java-google-style.xml",
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-    // "editor.suggest.insertMode": "replace",
-    // "editor.trimAutoWhitespace": false
   },
   "[css]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
