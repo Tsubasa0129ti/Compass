@@ -1,5 +1,9 @@
 {
   "java.configuration.updateBuildConfiguration": "automatic",
+  "debug.inlineValues":"auto",
+  "debug.internalConsoleOptions": "openOnSessionStart",
+  "debug.openDebug": "openOnSessionStart",
+  "debug.toolBarLocation": "docked",
   "editor.formatOnSave": true,
   "editor.fontLigatures": false,
   "files.autoSave": "onFocusChange",
