@@ -1,12 +1,15 @@
 {
   "java.configuration.updateBuildConfiguration": "automatic",
-  "debug.inlineValues":"auto",
+  "debug.inlineValues": "auto",
   "debug.internalConsoleOptions": "openOnSessionStart",
   "debug.openDebug": "openOnSessionStart",
   "debug.toolBarLocation": "docked",
   "editor.formatOnSave": true,
   "editor.fontLigatures": false,
-  "files.autoSave": "onFocusChange",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "eslint.validate": ["javascript", "typescript", "vue"],
   "files.insertFinalNewline": true, // ファイルの最終行に改行を挿入
   "files.trimFinalNewlines": true, // ファイルの最終行以降の空行を削除する
   "files.trimTrailingWhitespace": true, // ファイル保存時に末尾の空白を削除する。
@@ -42,5 +45,5 @@
     "editor.defaultFormatter": "mikeburgh.xml-format"
   },
   "prettier.bracketSpacing": false,
-  "prettier.embeddedLanguageFormatting": "off",
+  "prettier.embeddedLanguageFormatting": "off"
 }
