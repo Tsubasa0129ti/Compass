@@ -3,10 +3,11 @@
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:vue/vue3-recommended",
+    "plugin:jsdoc/recommended-typescript",
     "prettier"
   ],
   "parser": "vue-eslint-parser",
-  "plugins": ["vue", "@typescript-eslint"],
+  "plugins": ["vue", "@typescript-eslint", "jsdoc"],
   "parserOptions": {
     "ecmaVersion": "latest",
     "parser": "@typescript-eslint/parser",
@@ -26,7 +27,19 @@
     "camelcase": "warn",
     "eqeqeq": ["error", "always"],
     "import/prefer-default-export": "off",
-    "@typescript-eslint/quotes": ["error", "single"]
+    "@typescript-eslint/quotes": ["error", "single"],
+    "jsdoc/require-jsdoc": [
+      "warn",
+      {
+        "enableFixer": false,
+        "publicOnly": true,
+        "require": {
+          "ArrowFunctionExpression": true,
+          "ClassDeclaration": true,
+          "MethodDefinition": true
+        }
+      }
+    ]
   },
   "ignorePatterns": ["src/main/resources/static/js"]
 }
