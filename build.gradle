@@ -2,6 +2,7 @@ plugins {
 	id 'java'
 	id 'org.springframework.boot' version '3.1.4'
 	id 'io.spring.dependency-management' version '1.1.3'
+	id 'com.github.node-gradle.node' version '7.0.1'
 }
 
 group = 'com.example'
@@ -27,6 +28,9 @@ dependencies {
 	annotationProcessor 'org.projectlombok:lombok'
 	runtimeOnly 'org.postgresql:postgresql'
 }
+
+task npm_run_build(dependsOn:  ['npm_run_dev'])
+task npm_run_watch(dependsOn: ['npm_run_debug'])
 
 tasks.named('test') {
 	useJUnitPlatform()
