@@ -45,5 +45,7 @@
     "editor.defaultFormatter": "mikeburgh.xml-format"
   },
   "prettier.bracketSpacing": false,
-  "prettier.embeddedLanguageFormatting": "off"
+  "prettier.embeddedLanguageFormatting": "off",
+  "java.debug.settings.console": "internalConsole",
+  "java.compile.nullAnalysis.mode": "automatic"
 }

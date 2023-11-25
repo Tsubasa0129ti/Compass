@@ -1,0 +1,24 @@
+{
+  "configurations": [
+    {
+      "type": "java",
+      "name": "CodeLens (Launch) - CompassApplication",
+      "request": "launch",
+      "mainClass": "com.example.Compass.CompassApplication",
+      "projectName": "Compass"
+      // "args": "--spring.profiles.active=default"
+      // "envFile": "${workspaceFolder}/.env" DBの初期設定等に使われるやつか
+    },
+    {
+      "type": "java",
+      "name": "Spring Boot-CompassApplication<compass>", // upper?
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      // "console": "internalConsole",
+      "mainClass": "com.example.Compass.CompassApplication",
+      "projectName": "Compass"
+      // "args": "--spring.profiles.active=default"
+      // "envFile": "${workspaceFolder}/.env" DBの初期設定等に使われるやつか
+    }
+  ]
+}
