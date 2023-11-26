@@ -41,5 +41,6 @@
       }
     ]
   },
-  "ignorePatterns": ["src/main/resources/static/js"]
+  // webpack.config.jsのimportでエラーとなってしまうので回避
+  "ignorePatterns": ["src/main/resources/static/js", "webpack.config.js"]
 }

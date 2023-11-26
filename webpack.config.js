@@ -7,6 +7,8 @@ import * as sass from 'sass'
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+const outputPath = path.resolve(__dirname, './src/main/resources/static/js');
+
 export default {
   // エントリーポイントの設定
   entry: {
@@ -16,10 +18,10 @@ export default {
   },
   //ソースマップの設定（あまり理解していない）
   devtool: 'inline-source-map',
-    
+
   // 出力先の設定
   output: {
-    path: path.resolve(__dirname, './src/main/resources/static/js'),
+    path: outputPath,
     filename: "[name].js",
     clean: true, //ToDo: 効いているかを確認する
   },
@@ -78,6 +80,10 @@ export default {
     extensions: ['.ts', '.js', '.vue']
   },
 
+  watchOptions: {
+    ignored: /node_modules/,
+  },
+
   // プラグインの設定
   plugins: [
     new VueLoaderPlugin(),
@@ -87,9 +93,4 @@ export default {
     }),
   ],
 
-  // ホットリロードの設定をしようとしているが、詳細は不明のためコメントアウト
-  // devServer: {
-  //   port: '3000',
-  //   hot: true,
-  // }
 }
