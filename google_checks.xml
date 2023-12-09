@@ -36,10 +36,18 @@
     <property name="optional" value="true"/>
   </module>
 
+  <!-- ファイルの末尾が改行コードであるかを検査する。 -->
+  <module name="NewlineAtEndOfFile"/>
+
   <!-- Checks for whitespace                               -->
   <!-- See http://checkstyle.org/checks/whitespace/index.html -->
   <module name="FileTabCharacter">
     <property name="eachLine" value="true"/>
+  </module>
+
+  <!-- ファイルの行数を制限する。 -->
+  <module name="FileLength">
+    <property name="max" value="1500"/>
   </module>
 
   <module name="LineLength">
@@ -254,8 +262,8 @@
       <property name="basicOffset" value="2"/>
       <property name="braceAdjustment" value="2"/>
       <property name="caseIndent" value="2"/>
-      <property name="throwsIndent" value="4"/>
-      <property name="lineWrappingIndentation" value="4"/>
+      <property name="throwsIndent" value="2"/>
+      <property name="lineWrappingIndentation" value="2"/>
       <property name="arrayInitIndent" value="2"/>
     </module>
     <module name="AbbreviationAsWordInName">
@@ -318,6 +326,7 @@
     <module name="SummaryJavadoc">
       <property name="forbiddenSummaryFragments"
                value="^@return the *|^This method returns |^A [{]@code [a-zA-Z0-9]+[}]( is a )"/>
+      <property name="period" value="。"/>
     </module>
     <module name="JavadocParagraph"/>
     <module name="RequireEmptyLineBeforeBlockTagGroup"/>
@@ -378,5 +387,21 @@
       <!-- The check is suppressed in the next line of code after the comment -->
       <property name="influenceFormat" value="1"/>
     </module>
+
+    <!-- equals()とhashCode()がオーバーライドされているかを確認する。 -->
+    <module name="EqualsHashCode" />
+
+    <!-- メソッドの行数を制限する。 -->
+    <module name="MethodLength">
+      <property name="tokens" value="METHOD_DEF"/>
+      <property name="max" value="150"/>
+      <property name="countEmpty" value="false"/>
+    </module>
+
+    <!-- 定数のフォーマットのチェックする。 -->
+    <module name="ConstantName"/>
+
+    <!-- 未使用のimport文がないかをチェックする。 -->
+    <module name="UnusedImports"/>
   </module>
 </module>
